@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco - VidroMat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+        }
+        .bg-brand-red { background-color: #DC2626; }
+        .text-brand-red { color: #DC2626; }
+        .border-brand-red { border-color: #DC2626; }
+        .bg-glass-green { background-color: #D1F2EB; }
+        .text-glass-green-dark { color: #2D9CDB; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md py-4 px-6 md:px-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-brand-red">VidroMat</a>
+            <nav>
+                <a href="index.html" class="text-gray-700 hover:text-brand-red font-medium">Voltar ao Início</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow py-16 md:py-24 bg-glass-green">
+        <div class="container mx-auto px-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Trabalhe Conosco</h1>
+            <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-3xl mx-auto border border-gray-200">
+                <p class="text-gray-700 mb-6 text-center">
+                    Na VidroMat, valorizamos o talento e a dedicação. Se você busca uma oportunidade para crescer profissionalmente em um ambiente dinâmico e inovador, envie seu currículo para nós! Estamos sempre em busca de profissionais qualificados e apaixonados por vidros para integrar nossa equipe.
+                </p>
+                <p class="text-gray-700 mb-8 text-center">
+                    Confira as vagas disponíveis ou envie seu currículo para nosso banco de talentos.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Envie Seu Currículo</h3>
+                <form id="trabalheConoscoForm" action="mailto:vidromat@gmail.com" method="post" enctype="text/plain">
+                    <div class="mb-6">
+                        <label for="tcNome" class="block text-gray-700 text-sm font-semibold mb-2">Nome Completo:</label>
+                        <input type="text" id="tcNome" name="tcNome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="tcEmail" class="block text-gray-700 text-sm font-semibold mb-2">E-mail:</label>
+                        <input type="email" id="tcEmail" name="tcEmail" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="tcTelefone" class="block text-gray-700 text-sm font-semibold mb-2">Telefone:</label>
+                        <input type="tel" id="tcTelefone" name="tcTelefone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                    <div class="mb-6">
+                        <label for="tcCurriculo" class="block text-gray-700 text-sm font-semibold mb-2">Anexar Currículo:</label>
+                        <input type="file" id="tcCurriculo" name="tcCurriculo" accept=".pdf,.doc,.docx" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-brand-red focus:border-brand-red transition duration-200" required>
+                        <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, DOC, DOCX. Tamanho máximo: 5MB.</p>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-brand-red text-white px-8 py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold shadow-md">Enviar Currículo</button>
+                    </div>
+                </form>
+                <div id="trabalheConoscoSucesso" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-6" role="alert">
+                    <strong class="font-bold">Sucesso!</strong>
+                    <span class="block sm:inline">Seu currículo foi enviado com sucesso. Agradecemos o seu interesse!</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <p class="text-lg font-bold mb-2">VidroMat</p>
+            <p class="text-sm mb-4">Soluções em Vidros com Qualidade e Inovação.</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+            </div>
+            <p class="text-xs text-gray-500">© 2023 VidroMat. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Trabalhe Conosco Form
+        const trabalheConoscoForm = document.getElementById('trabalheConoscoForm');
+        const trabalheConoscoSucessoDiv = document.getElementById('trabalheConoscoSucesso');
+
+        trabalheConoscoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const tcNome = document.getElementById('tcNome').value;
+            const tcEmail = document.getElementById('tcEmail').value;
+            const tcTelefone = document.getElementById('tcTelefone').value;
+            const tcCurriculo = document.getElementById('tcCurriculo').files[0];
+
+            console.log('Dados do Currículo:', {
+                nome: tcNome,
+                email: tcEmail,
+                telefone: tcTelefone,
+                curriculo: tcCurriculo ? tcCurriculo.name : 'Nenhum arquivo'
+            });
+
+            // Em um cenário real, você enviaria o currículo para o backend.
+            // O atributo 'action="mailto:vidromat@gmail.com"' no formulário
+            // tentará abrir o cliente de e-mail do usuário.
+            // Para simular o envio, vamos apenas exibir a mensagem de sucesso.
+
+            trabalheConoscoForm.reset();
+            trabalheConoscoSucessoDiv.classList.remove('hidden');
+            setTimeout(() => {
+                trabalheConoscoSucessoDiv.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
