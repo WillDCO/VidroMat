@@ -1,37 +1,61 @@
-Funcionalidades Essenciais para o Site da Vidraçaria por Wilker Costa
+Site da Vidraçaria por Wilker Costa
 
-Funcionalidades Essenciais para o Site de Vidraçaria
+
+Site responsivo chamado VidroMat, focado em uma experiência do usuário excepcional para vidraçarias, vamos detalhar como as funcionalidades e o design podem ser implementados, usando a paleta de cores da marca (vermelho e branco) com toques de verde-água e transparências.
+Design e Experiência do Usuário
+O design do VidroMat será limpo e moderno, com foco na usabilidade e clareza.
+ * Paleta de Cores: O vermelho será usado para destaques, botões de ação (CTAs) e elementos que exigem atenção. O branco será predominante para o fundo e textos, garantindo legibilidade. Para trazer a sensação de vidro, usaremos tonalidades de verde-água e transparências em elementos como backgrounds sutis, ícones e linhas divisórias, transmitindo leveza e modernidade.
+ * Tipografia: Escolha de fontes legíveis e modernas, como uma sans-serif para o corpo do texto e talvez uma fonte um pouco mais impactante para títulos.
+ * Responsividade: O layout será fluido, adaptando-se perfeitamente a qualquer tamanho de tela, desde desktops grandes até smartphones. Imagens e vídeos serão otimizados para carregamento rápido em todas as plataformas.
+ * Navegação Intuitiva: Um menu de navegação claro e conciso, com as principais seções facilmente acessíveis.
+
+Funcionalidades Essenciais do VidroMat
 
 1. Catálogo de Produtos Detalhado
-
-Um catálogo de produtos bem detalhado é fundamental para qualquer site de vidraçaria. Isso permite que os clientes encontrem exatamente o que procuram e tomem decisões informadas. As funcionalidades que um catálogo deve incluir são:
-
-Filtros por tipo de vidro: Os clientes devem poder escolher entre opções como vidro temperado, laminado, comum, espelhado, entre outros.
-Filtros por aplicação: É importante oferecer filtros que permitam a seleção de vidros para diferentes aplicações, como box de banheiro, janelas, fachadas, móveis, etc.
-Tamanhos e espessuras disponíveis: Informar as dimensões e espessuras que cada tipo de vidro oferece.
-Acabamentos e cores: Mostrar as opções de acabamento e as cores disponíveis para cada produto.
-Fotos de alta qualidade: Imagens em alta resolução ajudam a visualizar melhor o produto final.
-Descrições técnicas: Incluir informações técnicas detalhadas, como espessura, segurança, e resistência térmica, para que o cliente compreenda completamente o produto.
+O coração do site será um catálogo robusto e fácil de usar.
+ * Filtros Inteligentes:
+   * Por Tipo de Vidro: Botões ou checkboxes visíveis para "Vidro Temperado", "Vidro Laminado", "Vidro Comum", "Espelhos", "Vidro Jateado", etc.
+   * Por Aplicação: Opções como "Box de Banheiro", "Janelas e Portas", "Fachadas", "Guarda-Corpo", "Móveis", "Divisórias", "Prateleiras".
+   * Tamanhos e Espessuras: Listagem clara das opções disponíveis para cada tipo de vidro.
+   * Acabamentos e Cores: Miniaturas ou swatches de cores e exemplos de acabamentos (lapidado, bisotado, jateado, serigrafado).
+ * Páginas de Produto: Cada produto terá uma página dedicada com:
+   * Fotos de Alta Qualidade: Múltiplas imagens em diferentes ângulos e detalhes, com função de zoom.
+   * Descrições Técnicas Detalhadas: Informações como espessura (ex: "6mm, 8mm, 10mm"), segurança (ex: "norma ABNT NBR 7199"), resistência térmica, isolamento acústico, etc.
+   * Vídeos Explicativos (Opcional): Demonstrações de aplicação ou características do vidro.
 
 2. Simulador de Medidas e Cortes Personalizados
-
-Uma ferramenta de simulação de medidas e cortes personalizados é essencial para atender às necessidades específicas dos clientes. Essa funcionalidade deve incluir:
-
-Inserção de medidas personalizadas: Permitir que o cliente insira as medidas exatas do vidro que deseja.
-Cálculo automático de preço: O sistema deve calcular automaticamente o preço por metro quadrado, incluindo quaisquer custos adicionais para cortes, lapidação, e furação.
-Pré-visualização do produto: Embora opcional, uma pré-visualização do produto pode ser extremamente útil para o cliente visualizar o resultado final.
+Essa será uma funcionalidade de destaque, empoderando o cliente.
+ * Interface Amigável: Um formulário com campos claros para o cliente inserir as medidas (largura e altura) em metros ou centímetros.
+ * Seleção de Características: Opções para escolher:
+   * Tipo de vidro (temperado, laminado, etc.).
+   * Espessura.
+   * Acabamentos adicionais (lapidação, bisotê).
+   * Furações (quantidade e diâmetro, se aplicável).
+ * Cálculo Automático de Preço: Integrado com o sistema de produtos, calculará o preço por metro quadrado e adicionará os custos de cortes, lapidação e furações em tempo real. O preço total será atualizado dinamicamente.
+ * Pré-visualização (Avançada): Uma representação visual simples do vidro com as medidas inseridas, podendo até mostrar a posição das furações.
 
 3. Calculadora de Frete para Produtos Frágeis
+Fundamental para transparência e confiança.
 
-Transporte de vidro exige cuidado especial, portanto, um sistema de cálculo de frete específico para produtos frágeis é fundamental:
-
-Cálculo baseado em peso, fragilidade e distância: A ferramenta deve considerar esses fatores para calcular o frete adequadamente.
-Integração com transportadoras: Integração com transportadoras especializadas ou serviços de frete local para garantir a entrega segura dos produtos.
+ * Inserção de CEP: Campo para o cliente digitar o CEP de entrega.
+ * Cálculo Inteligente: O sistema considerará:
+   * Peso: Calculado a partir das medidas e espessura do vidro.
+   * Fragilidade: Todos os produtos de vidro serão marcados como "frágeis", implicando custos de embalagem e manuseio especiais.
+   * Distância: Integração com APIs de serviços de entrega (como Correios para pequenos itens, ou transportadoras especializadas para vidros maiores) que consideram a distância.
+ * Opções de Entrega: Exibir diferentes opções de entrega (ex: "Entrega Padrão", "Entrega Expressa") com prazos e custos associados.
 
 4. Sistema de Orçamento Personalizado
+Para projetos mais complexos, um canal direto e eficiente.
 
-Para itens complexos ou feitos sob medida, um sistema de orçamento personalizado é crucial. Esse sistema deve incluir:
-
-Formulário detalhado: Um formulário que permita o cliente especificar detalhes técnicos e fazer upload de desenhos ou plantas.
-Retorno eficiente: O orçamento deve ser enviado ao cliente via e-mail ou WhatsApp, garantindo uma comunicação rápida e eficiente.
-Essas funcionalidades são projetadas para melhorar a experiência do cliente e facilitar o processo de compra, garantindo que eles recebam exatamente o que precisam com o menor esforço possível.
+ * Formulário Detalhado:
+   * Campos para dados de contato (nome, e-mail, telefone, WhatsApp).
+   * Campo de texto livre para descrição detalhada do projeto.
+   * Upload de Anexos: Permissão para o cliente fazer upload de desenhos, plantas, fotos ou outros documentos relevantes para o orçamento.
+   * Seleção de tipo de projeto (ex: "Projeto Residencial", "Projeto Comercial").
+ * Processo Otimizado: Após o envio do formulário, o sistema notificará a equipe da VidroMat. O orçamento será preparado e enviado ao cliente via e-mail e/ou WhatsApp, conforme a preferência do cliente, garantindo agilidade na comunicação.
+Estrutura do Site (Exemplo Básico)
+ * Home Page: Banner principal com foco nos diferenciais da VidroMat, acesso rápido ao catálogo, simulador e formulário de orçamento. Seções de depoimentos de clientes e projetos em destaque.
+ * Página "Sobre Nós": História da empresa, valores, equipe.
+ * Página "Contato": Formulário de contato, telefone, e-mail, endereço, mapa.
+ * Blog/Notícias: Artigos sobre tipos de vidro, dicas de manutenção, tendências.
+Com essas funcionalidades e um design responsivo e atraente, o VidroMat se tornará um site de vidraçaria que não apenas informa, mas também facilita a vida do cliente, oferecendo ferramentas práticas para suas necessidades de vidro.
