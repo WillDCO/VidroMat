@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidroMat - Soluções em Vidros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-brand-red">VidroMat</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-brand-red font-medium">Início</a>
+                <a href="#catalogo" class="text-gray-700 hover:text-brand-red font-medium">Catálogo</a>
+                <a href="#orcamento" class="text-gray-700 hover:text-brand-red font-medium">Orçamento</a>
+                <a href="#aprendizado" class="text-gray-700 hover:text-brand-red font-medium">Aprendizado</a>
+                <a href="#newsletter" class="text-gray-700 hover:text-brand-red font-medium">Newsletter</a>
+                <a href="trabalhe_conosco.html" target="_blank" class="text-gray-700 hover:text-brand-red font-medium">Trabalhe Conosco</a>
+                <a href="#contato" class="text-gray-700 hover:text-brand-red font-medium">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6 text-xl">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-700 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <a href="#home" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Início</a>
+            <a href="#catalogo" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Catálogo</a>
+            <a href="#orcamento" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Orçamento</a>
+            <a href="#aprendizado" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Aprendizado</a>
+            <a href="#newsletter" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Newsletter</a>
+            <a href="trabalhe_conosco.html" target="_blank" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Trabalhe Conosco</a>
+            <a href="#contato" class="text-gray-700 hover:text-brand-red font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <section id="home" class="relative bg-brand-red text-white py-20 md:py-32 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-red to-red-800 opacity-90"></div>
+            <div class="container mx-auto text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">VidroMat: Transparência e Qualidade para o Seu Projeto</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    Soluções inovadoras em vidros temperados, laminados e espelhos, com cortes personalizados e entrega segura.
+                </p>
+                <a href="#catalogo" class="bg-white text-brand-red px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg animate-fade-in-up delay-400">
+                    Explore Nosso Catálogo
+                </a>
+            </div>
+            <div class="absolute top-0 left-0 w-48 h-48 bg-glass-transparent rounded-full -translate-x-1/2 -translate-y-1/2 opacity-30 animate-float"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-glass-transparent rounded-full translate-x-1/2 translate-y-1/2 opacity-30 animate-float-reverse"></div>
+        </section>
+        <section id="catalogo" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Nosso Catálogo de Produtos</h2>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <select id="filterTipoVidro" class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-brand-red focus:border-brand-red transition duration-200">
+                        <option value="">Filtrar por Tipo de Vidro</option>
+                        <option value="temperado">Vidro Temperado</option>
+                        <option value="laminado">Vidro Laminado</option>
+                        <option value="comum">Vidro Comum</option>
+                        <option value="espelhado">Espelhado</option>
+                        <option value="jateado">Jateado</option>
+                        <option value="peliculas">Películas</option>
+                    </select>
+                    <select class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-brand-red focus:border-brand-red transition duration-200">
+                        <option value="">Filtrar por Aplicação</option>
+                        <option value="box">Box de Banheiro</option>
+                        <option value="janelas">Janelas</option>
+                        <option value="fachadas">Fachadas</option>
+                        <option value="moveis">Móveis</option>
+                        <option value="guarda-corpo">Guarda-Corpo</option>
+                        <option value="portas">Portas</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Vidro+Temperado" alt="Vidro Temperado" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Temperado</h3>
+                            <p class="text-gray-600 text-sm mb-4">Ideal para segurança, 5x mais resistente que o vidro comum. Não forma cacos pontiagudos ao quebrar.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 6mm, 8mm, 10mm</li>
+                                <li><strong>Aplicações:</strong> Box, Portas, Janelas, Guarda-Corpo</li>
+                                <li><strong>Acabamentos:</strong> Lapidado, Bisotê</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Vidro+Laminado" alt="Vidro Laminado" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Laminado</h3>
+                            <p class="text-gray-600 text-sm mb-4">Composto por duas ou mais lâminas de vidro com uma película de PVB, oferece segurança e controle acústico.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 8mm, 10mm, 12mm</li>
+                                <li><strong>Aplicações:</strong> Fachadas, Coberturas, Pisos de Vidro</li>
+                                <li><strong>Cores:</strong> Incolor, Bronze, Verde, Fumê</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Espelhos+Cristal" alt="Espelhos Cristal" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Espelhos Cristal</h3>
+                            <p class="text-gray-600 text-sm mb-4">Espelhos de alta qualidade, ideais para ambientes que buscam amplitude e sofisticação.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 3mm, 4mm, 5mm, 6mm</li>
+                                <li><strong>Aplicações:</strong> Banheiros, Salas, Quartos, Academias</li>
+                                <li><strong>Acabamentos:</strong> Bisotê, Lapidado, Comum</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Vidro+Jateado" alt="Vidro Jateado" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Jateado</h3>
+                            <p class="text-gray-600 text-sm mb-4">Proporciona privacidade e um toque decorativo, ideal para divisórias e portas.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 4mm, 6mm, 8mm</li>
+                                <li><strong>Aplicações:</strong> Divisórias, Portas, Box de Banheiro</li>
+                                <li><strong>Acabamentos:</strong> Jateado total, Jateado com desenhos</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Vidro+Serigrafado" alt="Vidro Serigrafado" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Serigrafado</h3>
+                            <p class="text-gray-600 text-sm mb-4">Vidro com aplicação de esmalte cerâmico, oferece durabilidade e diversas opções de cores e padrões.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 6mm, 8mm, 10mm</li>
+                                <li><strong>Aplicações:</strong> Revestimentos, Fachadas, Divisórias</li>
+                                <li><strong>Cores:</strong> Várias opções de cores sólidas e padrões</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Vidro+Comum" alt="Vidro Comum" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Comum</h3>
+                            <p class="text-gray-600 text-sm mb-4">Também conhecido como float, é o vidro mais básico, ideal para aplicações que não exigem alta resistência.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Espessuras:</strong> 2mm, 3mm, 4mm, 5mm, 6mm</li>
+                                <li><strong>Aplicações:</strong> Quadros, Prateleiras, Mesas</li>
+                                <li><strong>Acabamentos:</strong> Corte bruto, Lapidado</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x400/D1F2EB/2D9CDB?text=Películas+para+Vidros" alt="Películas para Vidros" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Películas para Vidros</h3>
+                            <p class="text-gray-600 text-sm mb-4">Oferecem privacidade, controle solar e segurança para portas e janelas.</p>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li><strong>Tipos:</strong> Escuras (insulfilm), Claras (privacidade, UV)</li>
+                                <li><strong>Aplicações:</strong> Portas, Janelas, Divisórias</li>
+                                <li><strong>Benefícios:</strong> Redução de calor, proteção UV, privacidade</li>
+                            </ul>
+                            <button class="mt-6 w-full bg-brand-red text-white py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="orcamento" class="py-16 md:py-24 bg-glass-green">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Simule suas Medidas e Solicite um Orçamento</h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-3xl mx-auto border border-gray-200">
+                    <p class="text-gray-700 mb-6 text-center">Utilize o simulador abaixo para definir seu vidro e, em seguida, preencha seus dados para solicitar um orçamento detalhado.</p>
+                    <form id="orcamentoForm">
+                        <div class="border-b border-gray-200 pb-8 mb-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Defina as Medidas do Seu Vidro</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <label for="largura" class="block text-gray-700 text-sm font-semibold mb-2">Largura (cm):</label>
+                                    <input type="number" id="largura" name="largura" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="Ex: 120" min="1" value="100">
+                                </div>
+                                <div>
+                                    <label for="altura" class="block text-gray-700 text-sm font-semibold mb-2">Altura (cm):</label>
+                                    <input type="number" id="altura" name="altura" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="Ex: 80" min="1" value="100">
+                                </div>
+                                <div>
+                                    <label for="tipoVidro" class="block text-gray-700 text-sm font-semibold mb-2">Tipo de Vidro:</label>
+                                    <select id="tipoVidro" name="tipoVidro" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200">
+                                        <option value="temperado">Vidro Temperado</option>
+                                        <option value="laminado">Vidro Laminado</option>
+                                        <option value="comum">Vidro Comum</option>
+                                        <option value="espelhado">Espelhado</option>
+                                        <option value="peliculas">Películas</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="espessura" class="block text-gray-700 text-sm font-semibold mb-2">Espessura (mm):</label>
+                                    <select id="espessura" name="espessura" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200">
+                                        <option value="6">6mm</option>
+                                        <option value="8">8mm</option>
+                                        <option value="10">10mm</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="acabamento" class="block text-gray-700 text-sm font-semibold mb-2">Acabamento:</label>
+                                    <select id="acabamento" name="acabamento" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200">
+                                        <option value="nenhum">Nenhum</option>
+                                        <option value="lapidado">Lapidado</option>
+                                        <option value="bisote">Bisotê</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-8 text-center">
+                                <p class="text-gray-700 text-sm font-semibold mb-2">Pré-visualização do Vidro:</p>
+                                <div id="preview-box" class="mx-auto border-2 border-dashed border-gray-400 bg-gray-100 flex items-center justify-center text-gray-500 text-xs rounded-lg overflow-hidden" style="width: 200px; height: 150px;">
+                                    <span id="preview-dimensions">100x100 cm</span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-gray-900 mb-4">Preço Estimado: <span id="precoEstimado" class="text-brand-red">R$ 0,00</span></p>
+                                <button type="button" id="calcularPreco" class="bg-brand-red text-white px-8 py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold shadow-md">Calcular Preço</button>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center mt-8">Seus Dados para Orçamento</h3>
+                        <div class="mb-6">
+                            <label for="nome" class="block text-gray-700 text-sm font-semibold mb-2">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">E-mail:</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" required value="vidromat@gmail.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="telefone" class="block text-gray-700 text-sm font-semibold mb-2">Telefone/WhatsApp:</label>
+                            <input type="tel" id="telefone" name="telefone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="(XX) XXXXX-XXXX" value="(61) 99339-2090">
+                        </div>
+                        <div class="mb-6">
+                            <label for="descricao" class="block text-gray-700 text-sm font-semibold mb-2">Descrição Adicional do Projeto:</label>
+                            <textarea id="descricao" name="descricao" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="Descreva detalhes adicionais sobre a instalação, ambiente, ou qualquer outra informação relevante." required></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <label for="anexo" class="block text-gray-700 text-sm font-semibold mb-2">Anexar Desenhos/Plantas (opcional):</label>
+                            <input type="file" id="anexo" name="anexo" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-brand-red focus:border-brand-red transition duration-200">
+                            <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, JPG, PNG. Tamanho máximo: 5MB.</p>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-red text-white px-8 py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold shadow-md">Enviar Orçamento</button>
+                        </div>
+                    </form>
+                    <div id="orcamentoSucesso" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-6" role="alert">
+                        <strong class="font-bold">Sucesso!</strong>
+                        <span class="block sm:inline">Seu pedido de orçamento foi enviado com sucesso. Entraremos em contato em breve!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="frete" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Calculadora de Frete</h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-2xl mx-auto border border-gray-200">
+                    <p class="text-gray-700 mb-6 text-center">Calcule o custo de frete para seu pedido de vidro.</p>
+                    <div class="mb-6">
+                        <label for="cep" class="block text-gray-700 text-sm font-semibold mb-2">CEP de Entrega:</label>
+                        <input type="text" id="cep" name="cep" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" placeholder="Ex: 00000-000" maxlength="9">
+                    </div>
+                    <div class="text-center mb-6">
+                        <button id="calcularFrete" class="bg-brand-red text-white px-8 py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold shadow-md">Calcular Frete</button>
+                    </div>
+                    <div id="resultadoFrete" class="text-center text-lg font-semibold text-gray-900 mt-4 hidden">
+                        <p>O frete estimado para o CEP <span id="cepExibido"></span> é de: <span class="text-brand-red" id="valorFrete">R$ 0,00</span></p>
+                        <p class="text-sm text-gray-600 mt-2">Prazo de entrega: <span id="prazoFrete"></span> dias úteis.</p>
+                    </div>
+                    <div id="freteErro" class="text-center text-red-600 mt-4 hidden">
+                        <p>Por favor, insira um CEP válido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="aprendizado" class="py-16 md:py-24 bg-glass-green">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Aprendizado e Dicas sobre Vidros</h2>
+                <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">Explore nossos artigos e guias para aprender mais sobre os diferentes tipos de vidro, suas aplicações e cuidados.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x300/D1F2EB/2D9CDB?text=Vidro+Temperado+vs+Laminado" alt="Vidro Temperado vs Laminado" class="w-full h-40 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vidro Temperado vs. Laminado: Qual escolher?</h3>
+                            <p class="text-gray-600 text-sm mb-4">Entenda as diferenças e qual tipo de vidro é mais adequado para sua necessidade de segurança e uso.</p>
+                            <a href="#" class="text-brand-red hover:underline font-medium">Leia Mais</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x300/D1F2EB/2D9CDB?text=Cuidados+com+Espelhos" alt="Cuidados com Espelhos" class="w-full h-40 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Dicas para Limpeza e Manutenção de Espelhos</h3>
+                            <p class="text-gray-600 text-sm mb-4">Mantenha seus espelhos impecáveis com nossas dicas práticas de limpeza e conservação.</p>
+                            <a href="#" class="text-brand-red hover:underline font-medium">Leia Mais</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                        <img src="https://placehold.co/600x300/D1F2EB/2D9CDB?text=Vidros+Decorativos" alt="Vidros Decorativos" class="w-full h-40 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Tendências em Vidros Decorativos para Interiores</h3>
+                            <p class="text-gray-600 text-sm mb-4">Descubra como vidros jateados, serigrafados e coloridos podem transformar seus ambientes.</p>
+                            <a href="#" class="text-brand-red hover:underline font-medium">Leia Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 bg-white rounded-xl shadow-lg p-6 md:p-8 text-center border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Publicidade: Soluções Inovadoras para sua Casa!</h3>
+                    <p class="text-gray-700 mb-6">Descubra produtos e serviços exclusivos de nossos parceiros.</p>
+                    <img src="https://placehold.co/800x200/FFDDDD/DC2626?text=Seu+Anúncio+Aqui" alt="Anúncio de Parceiro" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
+                    <a href="#" class="mt-6 inline-block bg-brand-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition duration-300 font-medium">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+        <section id="newsletter" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Assine Nossa Newsletter</h2>
+                <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">Receba as últimas novidades, dicas exclusivas e ofertas especiais diretamente no seu e-mail!</p>
+                <form id="newsletterForm" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Seu melhor e-mail" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-brand-red focus:border-brand-red transition duration-200" required>
+                    <button type="submit" class="bg-brand-red text-white px-8 py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold shadow-md">Assinar</button>
+                </form>
+                <div id="newsletterSucesso" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-6" role="alert">
+                    <strong class="font-bold">Obrigado!</strong>
+                    <span class="block sm:inline">Sua inscrição foi realizada com sucesso!</span>
+                </div>
+            </div>
+        </section>
+        <section id="contato" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 mb-4">Tem dúvidas ou precisa de ajuda? Fale conosco!</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+                    <a href="https://wa.me/5561993392090" target="_blank" class="flex items-center bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition duration-300 font-semibold">
+                        <i class="fab fa-whatsapp text-xl mr-2"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/vidromat" target="_blank" class="flex items-center bg-pink-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-700 transition duration-300 font-semibold">
+                        <i class="fab fa-instagram text-xl mr-2"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Central,+Qd+01+Conj.+05+Loja+03+-+Morro+da+Cruz+São+Sebastião+-+DF" target="_blank" class="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 font-semibold">
+                        <i class="fas fa-map-marker-alt text-xl mr-2"></i>
+                        <span>Nosso Endereço</span>
+                    </a>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="tel:+5561993392090" class="flex items-center bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <svg class="w-6 h-6 text-brand-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <span class="font-semibold text-gray-800">(61) 99339-2090</span>
+                    </a>
+                    <a href="mailto:vidromat@gmail.com" class="flex items-center bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <svg class="w-6 h-6 text-brand-red mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13h9a2 2 0 002-2V7a2 2 0 00-2-2H3a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="font-semibold text-gray-800">vidromat@gmail.com</span>
+                    </a>
+                </div>
+                <p class="text-lg text-gray-700 mt-6">
+                    **Endereço:** Avenida Central, Qd 01 Conj. 05 Loja 03 - Morro da Cruz São Sebastião - DF
+                </p>
+                <div class="mt-8">
+                    <a href="trabalhe_conosco.html" target="_blank" class="inline-block bg-gray-200 text-gray-700 px-6 py-3 rounded-lg shadow-md hover:bg-gray-300 transition duration-300 font-semibold">
+                        <i class="fas fa-briefcase mr-2"></i> Trabalhe Conosco
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-brand-red text-white text-center">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-bold mb-4">Publicidade: Transforme seu Espaço com Vidro!</h3>
+                <p class="text-lg mb-6">Soluções personalizadas para arquitetos e construtoras.</p>
+                <img src="https://placehold.co/900x250/FFDDDD/DC2626?text=Anúncio+Grande+Aqui" alt="Anúncio Grande" class="w-full max-w-4xl mx-auto rounded-lg shadow-md">
+                <a href="#" class="mt-6 inline-block bg-white text-brand-red px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">Conheça Nossos Projetos</a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12">
+        <div class="container mx-auto text-center">
+            <p class="text-lg font-bold mb-2">VidroMat</p>
+            <p class="text-sm mb-4">Soluções em Vidros com Qualidade e Inovação.</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+            </div>
+            <p class="text-xs text-gray-500">© 2023 VidroMat. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
