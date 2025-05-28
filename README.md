@@ -12,6 +12,7 @@ Tamanhos e espessuras disponíveis: Informar as dimensões e espessuras que cada
 Acabamentos e cores: Mostrar as opções de acabamento e as cores disponíveis para cada produto.
 Fotos de alta qualidade: Imagens em alta resolução ajudam a visualizar melhor o produto final.
 Descrições técnicas: Incluir informações técnicas detalhadas, como espessura, segurança, e resistência térmica, para que o cliente compreenda completamente o produto.
+
 2. Simulador de Medidas e Cortes Personalizados
 
 Uma ferramenta de simulação de medidas e cortes personalizados é essencial para atender às necessidades específicas dos clientes. Essa funcionalidade deve incluir:
@@ -19,12 +20,14 @@ Uma ferramenta de simulação de medidas e cortes personalizados é essencial pa
 Inserção de medidas personalizadas: Permitir que o cliente insira as medidas exatas do vidro que deseja.
 Cálculo automático de preço: O sistema deve calcular automaticamente o preço por metro quadrado, incluindo quaisquer custos adicionais para cortes, lapidação, e furação.
 Pré-visualização do produto: Embora opcional, uma pré-visualização do produto pode ser extremamente útil para o cliente visualizar o resultado final.
+
 3. Calculadora de Frete para Produtos Frágeis
 
 Transporte de vidro exige cuidado especial, portanto, um sistema de cálculo de frete específico para produtos frágeis é fundamental:
 
 Cálculo baseado em peso, fragilidade e distância: A ferramenta deve considerar esses fatores para calcular o frete adequadamente.
 Integração com transportadoras: Integração com transportadoras especializadas ou serviços de frete local para garantir a entrega segura dos produtos.
+
 4. Sistema de Orçamento Personalizado
 
 Para itens complexos ou feitos sob medida, um sistema de orçamento personalizado é crucial. Esse sistema deve incluir:
